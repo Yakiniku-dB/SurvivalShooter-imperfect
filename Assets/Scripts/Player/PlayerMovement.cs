@@ -5,7 +5,9 @@ public class PlayerMovement : MonoBehaviour
 
 	void Move (float h, float v)
 	{
-		
+	movement.Set (h, 0f, v);
+	movement = movement.normalized * speed * Time.deltaTime;
+	playerRigidbody.MovePosition (transform.position + movement);
 	}
 
 	/*
